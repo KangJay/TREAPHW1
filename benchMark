@@ -1,0 +1,42 @@
+#!/bin/bash
+#Credit due to Drew Loukusa, on 4/15/17, for the sorting algorithm
+#portion of this script. 
+
+#Unsorted O0
+echo "O0 Unsorted" 
+for i in 10000 20000 30000 40000 50000 60000 70000 80000 90000 100000
+do
+		time ./rngWords $i 8 |./O0TimeTest
+done
+
+#Sorted O0
+echo "O0 Sorted"
+
+for i in 10000 20000 30000 40000 50000 60000 70000 80000 90000 100000
+do
+	./rngWords $i 8 | sort > temp
+		time ./O0TimeTest < temp > trp-times.txt
+done
+
+#Unsorted O3
+echo "O3 Unsorted"
+for i in 10000 20000 30000 40000 50000 60000 70000 80000 90000 100000
+do
+		time ./rngWords $i 8 | ./O3TimeTest
+done
+
+#Sorted O3
+echo "O3 Sorted"
+for i in 10000 20000 30000 40000 50000 60000 70000 80000 90000 100000
+do
+	./rngWords $i 8 | sort  > temp
+		time ./O3TimeTest < temp > trp-times.txt
+done 
+
+#Sorted O3 TREAP
+echo "O3 Sorted Treap" 
+for i in 10000 20000 30000 40000 50000 60000 70000 80000 90000 100000
+do 
+	./rngWords $i 8 | sort > temp
+		time ./O3TreapTimeTester < temp > trp-times.txt
+done

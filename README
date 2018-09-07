@@ -1,0 +1,42 @@
+Author: Ji Kang
+CSS343B 
+4/16/2018 
+Prof. Morris Bernstein 
+Credits to DREW LOUKUSA****
+Program Information: 
+
+This program is a Dictionary A.K.A Map implemented with a Treap.This homework assignment was intended to show the main differences in efficiency in different implementations of a Dictionary ADT. The assignment was split up into 3 main components: 
+1. Template Binary Search Tree with no mechanism to maintain balance within the tree. 
+2. Measuring time complexity on sorted and unsorted input with optimization flags of -O0 and -O3 to see the time differences in each one. 
+3. Implementing a template Treap which has a balancing mechanism to ensure a run-time of log(n) compared to a worst case of n^2 from part 1. This part also includes a measure of run-time to compare the differences between parts 1 and 3. 
+
+Extraneous Information: 
+
+	Pictures relating to the run-time of program execution at different phases of the project are located inside the "Benchmark photos" files, which are included in this .zip file, and are labeled accordingly. 
+	The "rngWords" file is a python script used to generate random words for testing purposes. 
+
+Part 1: BST Program Information:
+	Please navigate to the 'Part 1 BST' folder for further information. Another "README" file for that specific project will be provided. 
+
+Part 2: Information: 
+	Files: Benchmark photos file, benchMark, O0TimeTest, O3TimeTest, O3TreapTimeTester, temp.txt, and trp-times.txt
+
+	To run the run-time measurement script, please open up a command-line terminal and navigate to this folder via cd command or open a terminal window directly by right clicking inside the folder and pressing "Open in Terminal". Once inside, please type the following to run: ./benchMark 
+
+WARNING: This will run the run-time measurements for the following: -O0 Unsorted BST, -O0 Sorted BST, -O3 Unsorted BST, -O3 Sorted BST, and -O3 Sorted Treap. This may take a long time. 
+
+
+Part 3: Treap Program Information
+	"BUILD" is the build script for this program. In order to compile the program, please open up the command-line terminal in Linux and either navigate to this folder manually through 'cd' commands or right click anywhere inside the folder that is not an item, and press "Open in Terminal". This will automatically open up a command-line terminal whose directory matches the current folder's. To run this script, please type in, or copy + paste, the following in the command-line: ./BUILD
+This script will generate a file called "runProg". Please do not discard it, it is meant to run the program itself.  
+
+	"RUN" is the run script for this program. Please do not run this script before running the "BUILD" script mentioned previously. Once you have successfully ran the build script for this project and have created the "runProg" file, you may run the run script. To run the "RUN" script, either use the same command-line terminal for the BUILD script or create a new one and navigate to the directory or right-click the folder and open "Open in Terminal". Once in the terminal, you may type the following in order to run the program: ./RUN 
+This will execute the program and accept input from Standard-In. If you did not mean to run the program without input, please press cntrl + C in order to stop it. 
+	If you wish to input any files as input for the program to sort, please use the following syntax: ./(run script) < (text file) to print out to the terminal window. E.g: "./RUN < someFile.txt" will print out the standard output of the program to the window. 
+	If you wish to output the standard output to a separate file, please use the following syntax: ./(run script) < (text input file) > (text output file). 
+E.g: "./RUN < inputFile.txt > outputfile.txt"
+
+This program will work with any standard input but you are provided with the following files in order to do some minimal testing: words.txt, 100words.txt, 1000words.txt, and 10000words.txt. Along with these files, are expected output files to compare the expected vs. actual output. They are located inside the same folder (Part 1 BST) and match with the input files in the following syntax: 
+Input file: (fileName).txt, Output file: (fileName)EXPECTED.txt
+
+The source files for the code are wordCountDriver.cpp and Treap.h
